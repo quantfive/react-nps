@@ -1,6 +1,6 @@
 {
-  "name": "@q5/react-nps",
-  "version": "1.0.0",
+  "name": "@quantfive/react-nps",
+  "version": "1.0.1",
   "description": "react-nps React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -10,6 +10,7 @@
     "lib",
     "umd"
   ],
+  "repository": "",
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -33,7 +34,6 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
   "keywords": [
     "react-component"
   ]

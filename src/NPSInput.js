@@ -76,7 +76,6 @@ class NPSInput extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    boxShadow: '0px -10px 10px rgba(200, 200, 200, 0.08)',
   },
   message: {
     margin: 0,
