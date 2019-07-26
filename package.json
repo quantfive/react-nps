@@ -1,5 +1,5 @@
 {
-  "name": "react-nps",
+  "name": "@q5/react-nps",
   "version": "1.0.0",
   "description": "react-nps React component",
   "main": "lib/index.js",
