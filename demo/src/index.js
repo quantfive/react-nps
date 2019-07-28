@@ -12,6 +12,7 @@ class Demo extends Component {
       <h1>react-nps Demo</h1>
       <Example
         onSubmit={this.onSubmit}
+        score={5}
       />
     </div>
   }

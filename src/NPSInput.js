@@ -10,7 +10,7 @@ class NPSInput extends React.Component {
 
   state = {
     dismissed: false,
-    score: null
+    score: this.props.score || null,
   }
 
   /**
