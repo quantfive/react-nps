@@ -40,12 +40,10 @@ class NPSInput extends React.Component {
   }
 
   render() {
-    const { service, children } = this.props;
+    const { service, children, message } = this.props;
     const { dismissed, score } = this.state;
 
-    const message = service ?
-        `How likely are you to recommend ${service} to your friends and colleagues?`
-        : 'How likely are you to recommend us to your friends and colleagues?';
+    let npsMessage = message ? message : 'How likely are you to recommend us to your friends and colleagues?'
 
     if (dismissed) {
       return null;
@@ -63,7 +61,7 @@ class NPSInput extends React.Component {
           ) : (
             <div className={css(styles.inner)}>
               <p className={css(styles.message)}>
-                {message}
+                { npsMessage }
               </p>
               <NPSScale onSubmit={this.onSubmit} />
             </div>
