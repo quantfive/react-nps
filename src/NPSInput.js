@@ -16,7 +16,7 @@ class NPSInput extends React.Component {
   /**
    * User clicked on a value.
    */
-  onSubmit(score) {
+  onSubmit = (score) => {
     const { onSubmit } = this.props;
     this.setState({
       score
@@ -28,7 +28,7 @@ class NPSInput extends React.Component {
   /**
    * User clicked to dismiss this form.
    */
-  onDismiss() {
+  onDismiss = () => {
     const { onDismissed } = this.props;
     const { score } = this.state;
 
@@ -51,22 +51,12 @@ class NPSInput extends React.Component {
 
     return (
       <div className={css(styles.container)}>
-        {score ? (
-          <div className={css(styles.inner)}>
-            {children({
-              score,
-              dismiss: this.onDismiss
-              })}
-            </div>
-          ) : (
-            <div className={css(styles.inner)}>
-              <p className={css(styles.message)}>
-                { npsMessage }
-              </p>
-              <NPSScale onSubmit={this.onSubmit} />
-            </div>
-          )
-        }
+        <div className={css(styles.inner)}>
+          <p className={css(styles.message)}>
+            { npsMessage }
+          </p>
+          <NPSScale onSubmit={this.onSubmit} score={score} />
+        </div>
       </div>
     );
   }

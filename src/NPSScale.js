@@ -10,7 +10,8 @@ const MAX = 10;
  */
 class NPSScale extends React.Component {
   state = {
-    value: null,
+    value: this.props.score,
+    valueChosen: null,
   }
 
   onMouseEnter(value) {
@@ -20,14 +21,23 @@ class NPSScale extends React.Component {
   }
 
   onMouseLeave(value) {
-    this.setState({
-      value: null
-    });
+    if (this.state.valueChosen === null) {
+      this.setState({
+        value: null
+      });
+    } else {
+      this.setState({
+        value: this.state.valueChosen,
+      })
+    }
   }
 
   onSelect(value) {
     const { onSubmit } = this.props;
     onSubmit(value);
+    this.setState({
+      valueChosen: value,
+    })
   }
 
   render() {
